@@ -43,7 +43,7 @@ namespace iDynTree {
     {
         SIX_AXIS_FORCE_TORQUE = 0,
         ACCELEROMETER = 1,
-        GYROSCOPE = 2,
+        GYROSCOPE = 2
     };
 
     // This should be equal to the number of option
@@ -354,7 +354,7 @@ namespace iDynTree {
         std::vector<Sensor *>::iterator internalIterator;
 
     public:
-        typedef typename std::ptrdiff_t difference_type;
+        typedef std::ptrdiff_t difference_type;
         typedef Sensor* value_type;
         typedef value_type& reference;
         typedef value_type* pointer;
@@ -386,7 +386,7 @@ namespace iDynTree {
         void constructor();
 
     public:
-        typedef typename std::ptrdiff_t difference_type;
+        typedef std::ptrdiff_t difference_type;
         typedef Sensor* value_type;
         typedef const value_type& reference;
         typedef const value_type* pointer; //Not sure. Maybe this should be simply Sensor*??
@@ -420,7 +420,7 @@ namespace iDynTree {
         std::vector< std::vector<Sensor *> >& iteratingList;
 
     public:
-        typedef typename std::ptrdiff_t difference_type;
+        typedef std::ptrdiff_t difference_type;
         typedef Sensor* value_type;
         typedef value_type& reference;
         typedef value_type* pointer; //Not sure. Maybe this should be simply Sensor*??
@@ -454,7 +454,7 @@ namespace iDynTree {
         void constructor();
 
     public:
-        typedef typename std::ptrdiff_t difference_type;
+        typedef std::ptrdiff_t difference_type;
         typedef Sensor* value_type;
         typedef const value_type& reference;
         typedef const value_type* pointer; //Not sure. Maybe this should be simply Sensor*??

@@ -67,7 +67,7 @@ void checkList()
     list.removeSensor(SIX_AXIS_FORCE_TORQUE, ft3.getName());
     ASSERT_IS_TRUE(list.getNrOfSensors(SIX_AXIS_FORCE_TORQUE) == 2);
 
-    for (SensorsList::typed_iterator it = list.sensorsIteratorForType(SensorType::SIX_AXIS_FORCE_TORQUE);
+    for (SensorsList::typed_iterator it = list.sensorsIteratorForType(SIX_AXIS_FORCE_TORQUE);
          it.isValid(); ++it) {
         ASSERT_IS_TRUE((*it)->getName() != ft3.getName());
     }
@@ -132,7 +132,7 @@ void checkIterator()
 
     //Checking ACC iterator
     int checkIndex = 0;
-    for (SensorsList::typed_iterator it = list.sensorsIteratorForType(SensorType::ACCELEROMETER); it.isValid(); ++it, ++checkIndex) {
+    for (SensorsList::typed_iterator it = list.sensorsIteratorForType(ACCELEROMETER); it.isValid(); ++it, ++checkIndex) {
         //The following cannot be used because sensors are cloned when put inside the SensorList
 //        ASSERT_IS_TRUE(*it == accExpectedOrder[checkIndex]);
         //The following cannot be used as operator== does not exist in sensor
@@ -144,14 +144,14 @@ void checkIterator()
 
     //Checking FTS iterator
     checkIndex = 0;
-    for (SensorsList::typed_iterator it = list.sensorsIteratorForType(SensorType::SIX_AXIS_FORCE_TORQUE); it.isValid(); ++it, ++checkIndex) {
+    for (SensorsList::typed_iterator it = list.sensorsIteratorForType(SIX_AXIS_FORCE_TORQUE); it.isValid(); ++it, ++checkIndex) {
         Sensor *s = *it;
         ASSERT_IS_TRUE(ftsExpectedOrder[checkIndex]->getName() == s->getName());
     }
 
     //Same checking on const iterator
     checkIndex = 0;
-    for (SensorsList::const_typed_iterator it = list.sensorsIteratorForType(SensorType::SIX_AXIS_FORCE_TORQUE); it.isValid(); ++it, ++checkIndex) {
+    for (SensorsList::const_typed_iterator it = list.sensorsIteratorForType(SIX_AXIS_FORCE_TORQUE); it.isValid(); ++it, ++checkIndex) {
         Sensor *s = *it;
         ASSERT_IS_TRUE(ftsExpectedOrder[checkIndex]->getName() == s->getName());
     }
