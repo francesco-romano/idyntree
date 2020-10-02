@@ -40,6 +40,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Added the possibility of reusing an already opened figure with the MATLAB iDynTree Visualizer either if the name coincides or by using gcf.
+- New Python bindings based on [pybind11](https://github.com/pybind/pybind11). 
+  They can be compiled by specifying the CMake option `IDYNTREE_USES_PYTHON_PYBIND11`. **Note** that the generated bindings are not
+  compatible with the SWIG-generated bindings (e.g. functions have different names).
 
 
 ### Changed
